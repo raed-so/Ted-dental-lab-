@@ -1,54 +1,90 @@
-// Slider Logic
+let currentLang = 'ar';
 let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
 
-function showSlide(index) {
-    if (index >= slides.length) {
-        currentSlide = 0;
-    } else if (index < 0) {
-        currentSlide = slides.length - 1;
-    } else {
-        currentSlide = index;
-    }
-    
-    const slider = document.querySelector('.slider');
-    if(slider) {
-        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
-}
-
-function moveSlide(direction) {
-    showSlide(currentSlide + direction);
-}
-
-// Auto play slider every 4 seconds
-setInterval(() => {
-    moveSlide(1);
-}, 4000);
-
-
-// Language Switcher Logic (Translates general UI, keeps services lists in English)
 function toggleLanguage() {
-    const body = document.body;
-    const currentLang = body.classList.contains('lang-ar') ? 'ar' : 'en';
+    currentLang = currentLang === 'ar' ? 'en' : 'ar';
+    const htmlRoot = document.getElementById('html-root');
+    const langBtn = document.getElementById('lang-toggle');
+
+    htmlRoot.setAttribute('lang', currentLang);
+    htmlRoot.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+    langBtn.textContent = currentLang === 'ar' ? 'English' : 'العربية';
+
+    const translatableElements = document.querySelectorAll('[data-ar][data-en]');
+    translatableElements.forEach(el => {
+        el.textContent = el.getAttribute(`data-${currentLang}`);
+    });
+
+    updateSliderPosition();
+}
+
+function toggleMenu() {
+    const navLinks = document.getElementById('nav-links');
+    navLinks.classList.toggle('active');
+}
+
+function closeMenu() {
+    const navLinks = document.getElementById('nav-links');
+    navLinks.classList.remove('active');
+}
+
+// إعداد معرض الصور (Slider)
+function initSlider() {
+    const slides = document.querySelectorAll('.slide-item');
+    const dotsContainer = document.getElementById('slider-dots');
+    if (!dotsContainer) return;
+    dotsContainer.innerHTML = '';
+
+    slides.forEach((_, idx) => {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (idx === 0) dot.classList.add('active');
+        dot.onclick = () => goToSlide(idx);
+        dotsContainer.appendChild(dot);
+    });
+}
+
+function updateSliderPosition() {
+    const track = document.getElementById('slider-track');
+    const dots = document.querySelectorAll('.dot');
+    if (!track) return;
     
-    const elements = document.querySelectorAll('[data-en][data-ar]');
-    
-    if (currentLang === 'en') {
-        body.classList.remove('lang-en');
-        body.classList.add('lang-ar');
-        body.setAttribute('dir', 'rtl');
-        
-        elements.forEach(el => {
-            el.textContent = el.getAttribute('data-ar');
-        });
-    } else {
-        body.classList.remove('lang-ar');
-        body.classList.add('lang-en');
-        body.setAttribute('dir', 'ltr');
-        
-        elements.forEach(el => {
-            el.textContent = el.getAttribute('data-en');
-        });
+    const directionFactor = currentLang === 'ar' ? 1 : -1;
+    track.style.transform = `translateX(${directionFactor * currentSlide * 100}%)`;
+
+    dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentSlide);
+    });
+}
+
+function moveSlide(step) {
+    const slides = document.querySelectorAll('.slide-item');
+    if (slides.length === 0) return;
+    currentSlide = (currentSlide + step + slides.length) % slides.length;
+    updateSliderPosition();
+}
+
+function goToSlide(index) {
+    currentSlide = index;
+    updateSliderPosition();
+}
+
+// تكبير الصور عند النقر (Lightbox)
+function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    if (!lightbox || !lightboxImg) return;
+    lightboxImg.src = src;
+    lightbox.style.display = 'flex';
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+        lightbox.style.display = 'none';
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    initSlider();
+});

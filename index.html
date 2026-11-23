@@ -1,122 +1,270 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl" id="html-root">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TED Dental Lab | Est. 1972 - Damascus</title>
+    <title>TED Dental Lab | مخبر تيد للتعويضات السنية</title>
+    <!-- خط Alexandria -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+    <!-- أيقونات Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .logo-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .header-logo {
-            height: 50px;
-            width: auto;
-            border-radius: 6px;
-        }
-        .contact-actions {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 25px;
-        }
-        .contact-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 24px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-            transition: transform 0.2s, opacity 0.3s;
-        }
-        .contact-btn:hover {
-            transform: translateY(-3px);
-            opacity: 0.9;
-        }
-        .btn-telegram {
-            background-color: #0088cc;
-            color: #ffffff;
-        }
-        .btn-whatsapp {
-            background-color: #25D366;
-            color: #ffffff;
-        }
-        .btn-email {
-            background-color: #D8E3FF;
-            color: #153377;
-        }
-        .social-links {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .social-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background-color: #086095;
-            color: #ffffff;
-            font-size: 22px;
-            text-decoration: none;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .social-icon:hover {
-            background-color: #D8E3FF;
-            color: #153377;
-            transform: scale(1.1);
-        }
-        @media (max-width: 768px) {
-            .nav-container, .about-container, .scanner-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-                margin-top: 15px;
-            }
-            .about-text h2, .scanner-text h2 {
-                text-align: center !important;
-            }
-        }
-    </style>
 </head>
-<body class="lang-en">
+<body>
 
-    <!-- Header & Navigation -->
-    <header class="site-header">
-        <div class="container nav-container">
-            <div class="logo-wrapper">
-                <img src="images/logo.png" alt="TED Dental Lab Logo" class="header-logo">
-                <div class="logo">
-                    <h1 data-en="TED Dental Lab" data-ar="مخبر تيد للتعويضات السنية">TED Dental Lab</h1>
-                    <p class="tagline" data-en="Excellence in Digital Dentistry Since 1972" data-ar="التميز في طب الأسنان الرقمي منذ عام 1972">Excellence in Digital Dentistry Since 1972</p>
-                </div>
+    <!-- الشريط العلوي مع اللوغو العريض -->
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="logo-area-full">
+                <img src="images/logo.png" alt="TED Dental Lab Logo" class="brand-logo-img">
             </div>
-            <nav class="nav-links">
-                <a href="#about" data-en="About Us" data-ar="من نحن">About Us</a>
-                <a href="#services" data-en="Services" data-ar="الخدمات">Services</a>
-                <a href="#gallery" data-en="Aesthetic Gallery" data-ar="الحالات التجميلية">Aesthetic Gallery</a>
-                <a href="#scanner" data-en="Digital Scanner" data-ar="السكنر الرقمي">Digital Scanner</a>
-                <a href="#contact" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a>
-                <button id="lang-toggle" onclick="toggleLanguage()">AR / EN</button>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="#about" onclick="closeMenu()" data-ar="من نحن" data-en="About Us">من نحن</a>
+                <a href="#scanner" onclick="closeMenu()" data-ar="السكنر الفموي" data-en="Intraoral Scanner">السكنر الفموي</a>
+                <a href="#gallery" onclick="closeMenu()" data-ar="معرض الأعمال" data-en="Gallery">معرض الأعمال</a>
+                <a href="#services" onclick="closeMenu()" data-ar="خدماتنا" data-en="Services">خدماتنا</a>
+                <a href="#contact" onclick="closeMenu()" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
             </nav>
+
+            <div class="nav-actions">
+                <button id="lang-toggle" class="lang-btn" onclick="toggleLanguage()">English</button>
+                <button class="menu-toggle" id="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h2 data-en="Precision Digital Solutions & Master Craftsmanship" data-ar="حلول رقمية دقيقة وحرفية عالية">Precision Digital Solutions & Master Craftsmanship</h2>
-            <p data-en="Blending decades of
+    <!-- القسم الترحيبي -->
+    <section id="about" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <span class="badge" data-ar="تأسس عام 1972 • دمشق" data-en="Established 1972 • Damascus">تأسس عام 1972 • دمشق</span>
+                <h1 data-ar="مخبر تيد للتعويضات السنية" data-en="TED Dental Lab">مخبر تيد للتعويضات السنية</h1>
+                <p class="tagline">Beautiful Smiles Start Here</p>
+                <p class="hero-desc" 
+                   data-ar="نجمع بين عراقة الخبرة الممتدة منذ عام 1972 وأحدث تقنيات التصميم والتصنيع الرقمي (CAD/CAM) لتقديم أدق التعويضات السنية التجميلية والوظيفية في دمشق."
+                   data-en="Combining decades of craftsmanship since 1972 with cutting-edge CAD/CAM digital dentistry to deliver precision esthetic and functional dental prosthetics in Damascus.">
+                   نجمع بين عراقة الخبرة الممتدة منذ عام 1972 وأحدث تقنيات التصميم والتصنيع الرقمي (CAD/CAM) لتقديم أدق التعويضات السنية التجميلية والوظيفية في دمشق.
+                </p>
+                <div class="hero-buttons">
+                    <a href="https://t.me/+963944578753" target="_blank" class="btn btn-primary">
+                        <i class="fa-brands fa-telegram"></i>
+                        <span data-ar="أرسل ملفات STL عبر تيليجرام" data-en="Send STL Files via Telegram">أرسل ملفات STL عبر تيليجرام</span>
+                    </a>
+                    <a href="#services" class="btn btn-outline" data-ar="استعراض الخدمات" data-en="Explore Services">استعراض الخدمات</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/heritage.jpg" alt="TED Dental Lab Heritage 1972">
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم السكنر الفموي المجاني -->
+    <section id="scanner" class="scanner-section">
+        <div class="container scanner-grid">
+            <div class="scanner-image">
+                <img src="images/scanner.jpg" alt="Free Intraoral Scanner Service">
+            </div>
+            <div class="scanner-info">
+                <span class="free-badge" data-ar="خدمة مجانية للأطباء" data-en="Complimentary for Dentists">خدمة مجانية للأطباء</span>
+                <h2 data-ar="أحدث أجهزة السكنر الفموي متوفرة مجاناً في عياداتكم" data-en="Latest Intraoral Scanners Available Free for Your Clinic">أحدث أجهزة السكنر الفموي متوفرة مجاناً في عياداتكم</h2>
+                <p data-ar="في إطار دعمنا للتحول الرقمي وتسهيل سير العمل السريري، يوفر مخبر تيد أحدث أجهزة المسح الضوئي الفموي (Intraoral Scanner) للسادة الأطباء مجاناً لتجربة تقنية متطورة ودقة فائقة في أخذ الطبعات الرقمية."
+                   data-en="To support digital transformation and streamline clinical workflows, TED Dental Lab provides the latest Intraoral Scanners free of charge for dentists to experience advanced digital impression accuracy in their clinics.">
+                   في إطار دعمنا للتحول الرقمي وتسهيل سير العمل السريري، يوفر مخبر تيد أحدث أجهزة المسح الضوئي الفموي (Intraoral Scanner) للسادة الأطباء مجاناً لتجربة تقنية متطورة ودقة فائقة في أخذ الطبعات الرقمية.
+                </p>
+                <a href="https://wa.me/963944578753" target="_blank" class="btn btn-primary">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span data-ar="اطلب الجهاز الآن عبر واتساب" data-en="Request Scanner via WhatsApp">اطلب الجهاز الآن عبر واتساب</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- معرض الصور والحالات (السلايدر) -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-ar="معرض الحالات التجميلية وأقسام المخبر" data-en="Aesthetic Cases & Laboratory Gallery">معرض الحالات التجميلية وأقسام المخبر</h2>
+                <p data-ar="لقطات حقيقية من أعمالنا السريرية وتجهيزاتنا الرقمية في مخبر تيد" data-en="Authentic clinical cases and digital workflows inside TED Dental Lab">لقطات حقيقية من أعمالنا السريرية وتجهيزاتنا الرقمية في مخبر تيد</p>
+            </div>
+
+            <div class="slider-wrapper">
+                <button class="slider-btn prev-btn" onclick="moveSlide(-1)" aria-label="Previous"><i class="fa-solid fa-chevron-right"></i></button>
+                
+                <div class="slider-viewport">
+                    <div class="slider-track" id="slider-track">
+                        <div class="slide-item" onclick="openLightbox('images/case1.jpg')">
+                            <img src="images/case1.jpg" alt="Anterior Veneers Case" onerror="this.src='images/heritage.jpg'">
+                            <div class="slide-caption">
+                                <span class="caption-title" data-ar="ابتسامة هوليود - عدسات Emax" data-en="Hollywood Smile - Emax Veneers">ابتسامة هوليود - عدسات Emax</span>
+                                <span class="caption-sig">Raed Somaya</span>
+                            </div>
+                        </div>
+                        <div class="slide-item" onclick="openLightbox('images/case2.jpg')">
+                            <img src="images/case2.jpg" alt="CAD/CAM Zirconia Design" onerror="this.src='images/scanner.jpg'">
+                            <div class="slide-caption">
+                                <span class="caption-title" data-ar="قسم CAD/CAM والتصميم الرقمي" data-en="CAD/CAM & Digital Smile Design">قسم CAD/CAM والتصميم الرقمي</span>
+                                <span class="caption-sig">Raed Somaya</span>
+                            </div>
+                        </div>
+                        <div class="slide-item" onclick="openLightbox('images/case3.jpg')">
+                            <img src="images/case3.jpg" alt="Esthetic Zirconia Crown" onerror="this.src='images/heritage.jpg'">
+                            <div class="slide-caption">
+                                <span class="caption-title" data-ar="تيجان الزيركون التجميلي متعدد الطبقات" data-en="Multilayer Esthetic Zirconia Crowns">تيجان الزيركون التجميلي متعدد الطبقات</span>
+                                <span class="caption-sig">Raed Somaya</span>
+                            </div>
+                        </div>
+                        <div class="slide-item" onclick="openLightbox('images/case4.jpg')">
+                            <img src="images/case4.jpg" alt="Implant Prosthetics" onerror="this.src='images/scanner.jpg'">
+                            <div class="slide-caption">
+                                <span class="caption-title" data-ar="تعويضات الزرعات والدعامات المخصصة" data-en="Custom Implant Abutments & Frameworks">تعويضات الزرعات والدعامات المخصصة</span>
+                                <span class="caption-sig">Raed Somaya</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="slider-btn next-btn" onclick="moveSlide(1)" aria-label="Next"><i class="fa-solid fa-chevron-left"></i></button>
+            </div>
+            <div class="slider-dots" id="slider-dots"></div>
+        </div>
+    </section>
+
+    <!-- نافذة تكبير الصورة (Lightbox) -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="Enlarged Case">
+    </div>
+
+    <!-- قسم الخدمات الفنية (قوائم الأعمال بالإنجليزية حصرياً) -->
+    <section id="services" class="services-section" dir="ltr">
+        <div class="container">
+            <div class="section-header">
+                <h2>Laboratory Services & Prosthetics Catalog</h2>
+                <p>Comprehensive digital and conventional dental laboratory solutions</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- 1. Fixed Prosthodontics -->
+                <div class="service-card">
+                    <h3><i class="fa-solid fa-crown"></i> Fixed Prosthodontics</h3>
+                    
+                    <h4>Crowns & Veneers</h4>
+                    <ul>
+                        <li>Emax Veneer</li>
+                        <li>Emax Crown</li>
+                        <li>Esthetic Zirconia Crown</li>
+                        <li>Dental Direkt Zirconia Crown (German)</li>
+                        <li>Esthetic Dental Direkt Zirconia Crown</li>
+                        <li>4D Zirconia Crown</li>
+                        <li>Conventional Zirconia Crown</li>
+                        <li>Full Anatomy Zirconia Crown</li>
+                        <li>Porcelain Fused to Metal (PFM Crown)</li>
+                    </ul>
+
+                    <h4>Fixed Prosthetic Planning</h4>
+                    <ul>
+                        <li>Smile Design</li>
+                        <li>Gingival Cutting Guide</li>
+                    </ul>
+
+                    <h4>Inlays & Onlays</h4>
+                    <ul>
+                        <li>Inlay</li>
+                        <li>Onlay</li>
+                    </ul>
+
+                    <h4>Bridges</h4>
+                    <ul>
+                        <li>Porcelain Adhesive Bridge (Maryland Bridge)</li>
+                        <li>Zirconia Adhesive Bridge (Maryland Bridge)</li>
+                    </ul>
+                </div>
+
+                <!-- 2. Implant Prosthetics & Metal Frameworks -->
+                <div class="service-card">
+                    <h3><i class="fa-solid fa-screw"></i> Implant Prosthetics</h3>
+                    <ul>
+                        <li>Custom Abutment (Titanium)</li>
+                        <li>Metal Post and Core</li>
+                        <li>Zirconia Post and Core</li>
+                        <li>Zirconia Post</li>
+                        <li>Glass Fiber Post</li>
+                    </ul>
+
+                    <h3><i class="fa-solid fa-layer-group"></i> Metal Frameworks</h3>
+                    <ul>
+                        <li>Co-Cr Framework (Laser) with Gingiva Porcelain</li>
+                        <li>I-Bar (Co-Cr / Titanium)</li>
+                        <li>I-Bridge (Co-Cr / Titanium)</li>
+                    </ul>
+                </div>
+
+                <!-- 3. Removable, Orthodontic & Digital Services -->
+                <div class="service-card">
+                    <h3><i class="fa-solid fa-teeth-open"></i> Removable Prosthodontics</h3>
+                    <h4>Partial & Complete Dentures</h4>
+                    <ul>
+                        <li>Co-Cr Partial Denture</li>
+                        <li>Vitallium Appliance (Co-Cr Partial Framework)</li>
+                        <li>Flexible Partial Denture</li>
+                    </ul>
+
+                    <h3><i class="fa-solid fa-teeth"></i> Orthodontic & Functional Appliances</h3>
+                    <ul>
+                        <li>Clear Aligner</li>
+                        <li>Orthodontic Retainer</li>
+                        <li>Night Guard (Bruxism Splint)</li>
+                        <li>Whitening Tray</li>
+                        <li>Space Maintainer</li>
+                        <li>Lingual Arch Space Maintainer</li>
+                    </ul>
+
+                    <h3><i class="fa-solid fa-laptop-medical"></i> Other Digital Services</h3>
+                    <ul>
+                        <li>Intraoral Scanner Image (STL / PLY Processing)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التواصل (مع الايميل وروابط الفيس والانستا الحقيقية) -->
+    <footer id="contact" class="footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <h3>TED Dental Lab</h3>
+                <p data-ar="مخبر تيد للتعويضات السنية - دمشق، سوريا. تأسس عام 1972." data-en="TED Dental Lab - Damascus, Syria. Established in 1972.">مخبر تيد للتعويضات السنية - دمشق، سوريا. تأسس عام 1972.</p>
+                <p class="signature">Raed Somaya</p>
+            </div>
+
+            <div class="footer-contact">
+                <h4 data-ar="بيانات التواصل واستقبال الحالات" data-en="Contact & Digital Case Submission">بيانات التواصل واستقبال الحالات</h4>
+                <p><i class="fa-solid fa-phone"></i> <span dir="ltr">+963 944 578 753</span></p>
+                <p><i class="fa-solid fa-envelope"></i> <a href="mailto:teddentallab1972@gmail.com" style="color: inherit; text-decoration: none;">teddentallab1972@gmail.com</a></p>
+                <p><i class="fa-solid fa-location-dot"></i> <span data-ar="دمشق، سوريا" data-en="Damascus, Syria">دمشق، سوريا</span></p>
+            </div>
+
+            <div class="footer-social">
+                <h4 data-ar="قنوات التواصل الرقمي" data-en="Digital & Social Channels">قنوات التواصل الرقمي</h4>
+                <div class="social-icons">
+                    <a href="https://t.me/+963944578753" target="_blank" title="Telegram (STL Files)"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="https://wa.me/963944578753" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/share/19RUpSyprA/?mibextid=wwXIfr" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/ted_dental_lab?bqrl=aDZoYm9tbXY0b3M2&utm_source=qr" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 1972 - 2026 TED Dental Lab. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
