@@ -14,34 +14,32 @@
 </head>
 <body>
 
-    <!-- الشريط العلوي مع الشعار بالمنتصف بكامل الحجم -->
+    <!-- الشريط العلوي مع الشعار على اليمين وبحجم أكبر -->
     <header class="navbar">
-        <div class="container nav-content-centered">
-            <div class="logo-center-area">
-                <img src="images/logo.png" alt="TED Dental Lab Logo" class="brand-logo-center">
+        <div class="container nav-content">
+            <div class="logo-area">
+                <img src="images/logo.png" alt="TED Dental Lab Logo" class="brand-logo-right">
             </div>
 
-            <div class="nav-top-row">
-                <nav class="nav-links" id="nav-links">
-                    <a href="#about" onclick="closeMenu()" data-ar="من نحن" data-en="About Us">من نحن</a>
-                    <a href="#scanner" onclick="closeMenu()" data-ar="السكنر الفموي" data-en="Intraoral Scanner">السكنر الفموي</a>
-                    <a href="#online-design" onclick="closeMenu()" data-ar="التصميم الأونلاين" data-en="Online Design">التصميم الأونلاين</a>
-                    <a href="#gallery" onclick="closeMenu()" data-ar="معرض الأعمال" data-en="Gallery">معرض الأعمال</a>
-                    <a href="#services" onclick="closeMenu()" data-ar="خدماتنا" data-en="Services">خدماتنا</a>
-                    <a href="#contact" onclick="closeMenu()" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
-                </nav>
+            <nav class="nav-links" id="nav-links">
+                <a href="#about" onclick="closeMenu()" data-ar="من نحن" data-en="About Us">من نحن</a>
+                <a href="#scanner" onclick="closeMenu()" data-ar="السكنر الفموي" data-en="Intraoral Scanner">السكنر الفموي</a>
+                <a href="#online-design" onclick="closeMenu()" data-ar="التصميم الأونلاين" data-en="Online Design">التصميم الأونلاين</a>
+                <a href="#gallery" onclick="closeMenu()" data-ar="معرض الأعمال" data-en="Gallery">معرض الأعمال</a>
+                <a href="#services" onclick="closeMenu()" data-ar="خدماتنا" data-en="Services">خدماتنا</a>
+                <a href="#contact" onclick="closeMenu()" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
+            </nav>
 
-                <div class="nav-actions">
-                    <button id="lang-toggle" class="lang-btn" onclick="toggleLanguage()">English</button>
-                    <button class="menu-toggle" id="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                </div>
+            <div class="nav-actions">
+                <button id="lang-toggle" class="lang-btn" onclick="toggleLanguage()">English</button>
+                <button class="menu-toggle" id="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- القسم الترحيبي -->
+    <!-- القسم الترحيبي والنص الجديد -->
     <section id="about" class="hero">
         <div class="container hero-grid">
             <div class="hero-text">
@@ -49,9 +47,9 @@
                 <h1 data-ar="مخبر تيد للتعويضات السنية" data-en="TED Dental Lab">مخبر تيد للتعويضات السنية</h1>
                 <p class="tagline">Beautiful Smiles Start Here</p>
                 <p class="hero-desc" 
-                   data-ar="نجمع بين عراقة الخبرة الممتدة منذ عام 1972 وأحدث تقنيات التصميم والتصنيع الرقمي (CAD/CAM) لتقديم أدق التعويضات السنية التجميلية والوظيفية في دمشق."
-                   data-en="Combining decades of craftsmanship since 1972 with cutting-edge CAD/CAM digital dentistry to deliver precision esthetic and functional dental prosthetics in Damascus.">
-                   نجمع بين عراقة الخبرة الممتدة منذ عام 1972 وأحدث تقنيات التصميم والتصنيع الرقمي (CAD/CAM) لتقديم أدق التعويضات السنية التجميلية والوظيفية في دمشق.
+                   data-ar="TED Dental Lab – أكثر من خمسة عقود من الدقة والابتكار منذ تأسيسه عام 1972، رسّخ مختبر TED Dental Lab مكانته كشريك موثوق لأطباء الأسنان، جامعاً بين الحِرفية اليدوية المتوارثة عبر الأجيال وأحدث ما توصلت إليه تكنولوجيا طب الأسنان الرقمي (Digital Dentistry)."
+                   data-en="TED Dental Lab – Over five decades of precision and innovation since its establishment in 1972. TED Dental Lab has established its position as a trusted partner for dentists, combining generations of handcrafted expertise with the latest breakthroughs in digital dentistry.">
+                   TED Dental Lab – أكثر من خمسة عقود من الدقة والابتكار منذ تأسيسه عام 1972، رسّخ مختبر TED Dental Lab مكانته كشريك موثوق لأطباء الأسنان، جامعاً بين الحِرفية اليدوية المتوارثة عبر الأجيال وأحدث ما توصلت إليه تكنولوجيا طب الأسنان الرقمي (Digital Dentistry).
                 </p>
                 <div class="hero-buttons">
                     <a href="https://t.me/+963944578753" target="_blank" class="btn btn-primary">
@@ -88,7 +86,7 @@
         </div>
     </section>
 
-    <!-- قسم التصميم الأونلاين (استقبال الملفات من دول أخرى) -->
+    <!-- قسم التصميم الأونلاين -->
     <section id="online-design" class="online-design-section">
         <div class="container">
             <div class="section-header">
@@ -109,7 +107,7 @@
         </div>
     </section>
 
-    <!-- معرض الصور (بدون شرح، فقط صور الـ case) -->
+    <!-- معرض الصور (مهيأ لـ 10 صور للحالات case1 إلى case10) -->
     <section id="gallery" class="gallery-section">
         <div class="container">
             <div class="section-header">
@@ -125,13 +123,31 @@
                             <img src="images/case1.jpg" alt="Case 1" onerror="this.src='images/heritage.jpg'">
                         </div>
                         <div class="slide-item" onclick="openLightbox('images/case2.jpg')">
-                            <img src="images/case2.jpg" alt="Case 2" onerror="this.src='images/scanner.jpg'">
+                            <img src="images/case2.jpg" alt="Case 2" onerror="this.src='images/heritage.jpg'">
                         </div>
                         <div class="slide-item" onclick="openLightbox('images/case3.jpg')">
                             <img src="images/case3.jpg" alt="Case 3" onerror="this.src='images/heritage.jpg'">
                         </div>
                         <div class="slide-item" onclick="openLightbox('images/case4.jpg')">
-                            <img src="images/case4.jpg" alt="Case 4" onerror="this.src='images/scanner.jpg'">
+                            <img src="images/case4.jpg" alt="Case 4" onerror="this.src='images/heritage.jpg'">
+                        </div>
+                        <div class="slide-item" onclick="openLightbox('images/case5.jpg')">
+                            <img src="images/case5.jpg" alt="Case 5" onerror="this.src='images/heritage.jpg'">
+                        </div>
+                        <div class="slide-item" onclick="openLightbox('images/case6.jpg')">
+                            <img src="images/case6.jpg" alt="Case 6" onerror="this.src='images/heritage.jpg'">
+                        </div>
+                        <div class="slide-item" onclick="openLightbox('images/case7.jpg')">
+                            <img src="images/case7.jpg" alt="Case 7" onerror="this.src='images/heritage.jpg'">
+                        </div>
+                        <div class="slide-item" onclick="openLightbox('images/case8.jpg')">
+                            <img src="images/case8.jpg" alt="Case 8" onerror="this.src='images/heritage.jpg'">
+                        </div>
+                        <div class="slide-item" onclick="openLightbox('images/case9.jpg')">
+                            <img src="images/case9.jpg" alt="Case 9" onerror="this.src='images/heritage.jpg'">
+                        </div>
+                        <div class="slide-item" onclick="openLightbox('images/case10.jpg')">
+                            <img src="images/case10.jpg" alt="Case 10" onerror="this.src='images/heritage.jpg'">
                         </div>
                     </div>
                 </div>
@@ -148,7 +164,7 @@
         <img class="lightbox-content" id="lightbox-img" alt="Enlarged Case">
     </div>
 
-    <!-- قسم الخدمات الفنية (باللغة الإنجليزية حصرياً) -->
+    <!-- قسم الخدمات الفنية (بالإنجليزية حصرياً) -->
     <section id="services" class="services-section" dir="ltr">
         <div class="container">
             <div class="section-header">
@@ -241,7 +257,7 @@
         </div>
     </section>
 
-    <!-- قسم التواصل (مع الإيميل والروابط الحقيقية وبدون توقيع) -->
+    <!-- قسم التواصل -->
     <footer id="contact" class="footer">
         <div class="container footer-grid">
             <div class="footer-about">
