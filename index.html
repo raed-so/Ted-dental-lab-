@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TED Dental Lab | مخبر تيد للتعويضات السنية</title>
+    <!-- استدعاء خط Alexandria -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+    <!-- أيقونات Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- الشريط العلوي مع الشعار على اليمين -->
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="logo-area">
+                <img src="images/logo.png" alt="TED Dental Lab Logo" class="brand-logo-right">
+            </div>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="#about" onclick="closeMenu()" data-ar="من نحن" data-en="About Us">من نحن</a>
+                <a href="#scanner" onclick="closeMenu()" data-ar="السكنر الفموي" data-en="Intraoral Scanner">السكنر الفموي</a>
+                <a href="#online-design" onclick="closeMenu()" data-ar="التصميم الأونلاين" data-en="Online Design">التصميم الأونلاين</a>
+                <a href="#gallery" onclick="closeMenu()" data-ar="معرض الحالات" data-en="Cases Gallery">معرض الحالات</a>
+                <a href="#services" onclick="closeMenu()" data-ar="خدماتنا" data-en="Services">خدماتنا</a>
+                <a href="#contact" onclick="closeMenu()" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="lang-toggle" class="lang-btn" onclick="toggleLanguage()">English</button>
+                <button class="menu-toggle" id="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- القسم الترحيبي -->
+    <section id="about" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <span class="badge" data-ar="تأسس عام 1972 • دمشق" data-en="Established 1972 • Damascus">تأسس عام 1972 • دمشق</span>
+                <h1 data-ar="مخبر تيد للتعويضات السنية" data-en="TED Dental Lab">مخبر تيد للتعويضات السنية</h1>
+                <p class="tagline">Beautiful Smiles Start Here</p>
+                <p class="hero-desc" 
+                   data-ar="TED Dental Lab – أكثر من خمسة عقود من الدقة والابتكار منذ تأسيسه عام 1972، رسّخ مختبر TED Dental Lab مكانته كشريك موثوق لأطباء الأسنان، جامعاً بين الحِرفية اليدوية المتوارثة عبر الأجيال وأحدث ما توصلت إليه تكنولوجيا طب الأسنان الرقمي (Digital Dentistry)."
+                   data-en="TED Dental Lab – Over five decades of precision and innovation since its establishment in 1972. TED Dental Lab has established its position as a trusted partner for dentists, combining generations of handcrafted expertise with the latest breakthroughs in digital dentistry.">
+                   TED Dental Lab – أكثر من خمسة عقود من الدقة والابتكار منذ تأسيسه عام 1972، رسّخ مختبر TED Dental Lab مكانته كشريك موثوق لأطباء الأسنان، جامعاً بين الحِرفية اليدوية المتوارثة عبر الأجيال وأحدث ما توصلت إليه تكنولوجيا طب الأسنان الرقمي (Digital Dentistry).
+                </p>
+                <div class="hero-buttons">
+                    <a href="https://t.me/+963944578753" target="_blank" class="btn btn-primary">
+                        <i class="fa-brands fa-telegram"></i>
+                        <span data-ar="أرسل ملفات STL عبر تيليجرام" data-en="Send STL Files via Telegram">أرسل ملفات STL عبر تيليجرام</span>
+                    </a>
+                    <a href="#services" class="btn btn-outline" data-ar="استعراض الخدمات" data-en="Explore Services">استعراض الخدمات</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/heritage.jpg" alt="TED Dental Lab Heritage 1972">
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم السكنر الفموي المجاني -->
+    <section id="scanner" class="scanner-section">
+        <div class="container scanner-grid">
+            <div class="scanner-image">
+                <img src="images/scanner.jpg" alt="Free Intraoral Scanner Service">
+            </div>
+            <div class="scanner-info">
+                <span class="free-badge" data-ar="خدمة مجانية للأطباء" data-en="Complimentary for Dentists">خدمة مجانية للأطباء</span>
+                <h2 data-ar="أحدث أجهزة السكنر الفموي متوفرة مجاناً في عياداتكم" data-en="Latest Intraoral Scanners Available Free for Your Clinic">أحدث أجهزة السكنر الفموي متوفرة مجاناً في عياداتكم</h2>
+                <p data-ar="في إطار دعمنا للتحول الرقمي وتسهيل سير العمل السريري، يوفر مخبر تيد أحدث أجهزة المسح الضوئي الفموي (Intraoral Scanner) للسادة الأطباء مجاناً لتجربة تقنية متطورة ودقة فائقة في أخذ الطبعات الرقمية."
+                   data-en="To support digital transformation and streamline clinical workflows, TED Dental Lab provides the latest Intraoral Scanners free of charge for dentists to experience advanced digital impression accuracy in their clinics.">
+                   في إطار دعمنا للتحول الرقمي وتسهيل سير العمل السريري، يوفر مخبر تيد أحدث أجهزة المسح الضوئي الفموي (Intraoral Scanner) للسادة الأطباء مجاناً لتجربة تقنية متطورة ودقة فائقة في أخذ الطبعات الرقمية.
+                </p>
+                <a href="https://wa.me/963944578753" target="_blank" class="btn btn-primary">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span data-ar="اطلب الجهاز الآن عبر واتساب" data-en="Request Scanner via WhatsApp">اطلب الجهاز الآن عبر واتساب</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التصميم الأونلاين -->
+    <section id="online-design" class="online-design-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-ar="خدمة التصميم الرقمي الأونلاين الدولية" data-en="International Online Dental Design Service">خدمة التصميم الرقمي الأونلاين الدولية</h2>
+                <p data-ar="نستقبل ملفات الـ STL والـ PLY من أطباء الأسنان والمخابر حول العالم لتصميم الحالات بدقة واحترافية عالية" data-en="Accepting STL and PLY scan files from dentists and labs worldwide for precise digital design">نستقبل ملفات الـ STL والـ PLY من أطباء الأسنان والمخابر حول العالم لتصميم الحالات بدقة واحترافية عالية</p>
+            </div>
+            <div class="online-content">
+                <div class="online-card">
+                    <i class="fa-solid fa-globe"></i>
+                    <h3 data-ar="تصميم معتمد لجميع دول العالم" data-en="Global CAD/CAM Solutions">تصميم معتمد لجميع دول العالم</h3>
+                    <p data-ar="أرسل مقاساتك الرقمية (Intraoral Scans) عبر قنواتنا الرقمية واحصل على تصاميم CAD جاهزة للتصنيع بأعلى معايير الجودة." data-en="Send your digital impressions via our digital channels and receive production-ready CAD designs matching the highest quality standards.">أرسل مقاساتك الرقمية (Intraoral Scans) عبر قنواتنا الرقمية واحصل على تصاميم CAD جاهزة للتصنيع بأعلى معايير الجودة.</p>
+                    <a href="https://t.me/+963944578753" target="_blank" class="btn btn-primary">
+                        <i class="fa-brands fa-telegram"></i>
+                        <span data-ar="تواصل لإرسال الملفات دولياً" data-en="Contact to Send Files Internationally">تواصل لإرسال الملفات دولياً</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- معرض الحالات السريرية المستقل -->
+    <section id="gallery" class="cases-gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-ar="معرض الحالات السريرية" data-en="Clinical Cases Gallery">معرض الحالات السريرية</h2>
+                <p data-ar="نماذج حقيقية من التعويضات السنية المنجزة في مخبر تيد" data-en="Authentic dental prosthetics cases delivered by TED Dental Lab">نماذج حقيقية من التعويضات السنية المنجزة في مخبر تيد</p>
+            </div>
+
+            <div class="cases-slider-wrapper">
+                <button class="cases-slider-btn cases-prev-btn" onclick="moveCaseSlide(-1)" aria-label="Previous"><i class="fa-solid fa-chevron-right"></i></button>
+                
+                <div class="cases-slider-viewport">
+                    <div class="cases-slider-track" id="cases-slider-track">
+                        <div class="case-slide-item" onclick="openLightbox('images/case1.jpg')">
+                            <img src="images/case1.jpg" alt="Clinical Case 1" onerror="this.style.display='none'">
+                        </div>
+                        <div class="case-slide-item" onclick="openLightbox('images/case2.jpg')">
+                            <img src="images/case2.jpg" alt="Clinical Case 2" onerror="this.style.display='none'">
+                        </div>
+                        <div class="case-slide-item" onclick="openLightbox('images/case3.jpg')">
+                            <img src="images/case3.jpg" alt="Clinical Case 3" onerror="this.style.display='none'">
+                        </div>
+                        <div class="case-slide-item" onclick="openLightbox('images/case4.jpg')">
+                            <img src="images/case4.jpg" alt="Clinical Case 4" onerror="this.style.display='none'">
+                        </div>
+                        <div class="case-slide-item" onclick="openLightbox('images/case5.jpg')">
+                            <img src="images/case5.jpg" alt="Clinical Case 5" onerror="this.style.display='none'">
+                        </div>
+                        <div class="case-slide-item" onclick="openLightbox('images/case6.jpg')">
+                            <img src="images/case6.jpg" alt="Clinical Case 6" onerror="this.style.display='none'">
+                        </div>
+                        <div class="case-slide-item" onclick="openLightbox('images/case7.jpg')">
+                            <img src="images/case7.jpg" alt="Clinical Case 7" onerror="this.style.display='none'">
+                        </div>
+                        <div class="case-slide-item" onclick="openLightbox('images/case8.jpg')">
+                            <img src="images/case8.jpg" alt="Clinical Case 8" onerror="this.style.display='none'">
+                        </div>
+                        <div class="case-slide-item" onclick="openLightbox('images/case9.jpg')">
+                            <img src="images/case9.jpg" alt="Clinical Case 9" onerror="this.style.display='none'">
+                        </div>
+                        <div class="case-slide-item" onclick="openLightbox('images/case10.jpg')">
+                            <img src="images/case10.jpg" alt="Clinical Case 10" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                </div>
+
+                <button class="cases-slider-btn cases-next-btn" onclick="moveCaseSlide(1)" aria-label="Next"><i class="fa-solid fa-chevron-left"></i></button>
+            </div>
+            <div class="cases-slider-dots" id="cases-slider-dots"></div>
+        </div>
+    </section>
+
+    <!-- ناف
