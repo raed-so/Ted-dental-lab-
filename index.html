@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TED Dental Lab | Est. 1972 - Damascus</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="lang-en"> <!-- Default language English -->
+
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <div class="logo">
+                <h1 data-en="TED Dental Lab" data-ar="مخبر تيد للتعويضات السنية">TED Dental Lab</h1>
+                <p class="tagline" data-en="Excellence in Digital Dentistry Since 1972" data-ar="التميز في طب الأسنان الرقمي منذ عام 1972">Excellence in Digital Dentistry Since 1972</p>
+            </div>
+            <nav class="nav-links">
+                <a href="#about" data-en="About Us" data-ar="من نحن">About Us</a>
+                <a href="#services" data-en="Services" data-ar="الخدمات">Services</a>
+                <a href="#gallery" data-en="Aesthetic Gallery" data-ar="الحالات التجميلية">Aesthetic Gallery</a>
+                <a href="#scanner" data-en="Digital Scanner" data-ar="السكنر الرقمي">Digital Scanner</a>
+                <a href="#contact" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a>
+                <!-- Language Switcher Button -->
+                <button id="lang-toggle" onclick="toggleLanguage()">AR / EN</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h2 data-en="Precision Digital Solutions & Master Craftsmanship" data-ar="حلول رقمية دقيقة وحرفية عالية">Precision Digital Solutions & Master Craftsmanship</h2>
+            <p data-en="Blending decades of expertise since 1972 with state-of-the-art CAD/CAM workflows in Damascus." data-ar="نجمع بين عقود من الخبرة منذ عام 1972 وأحدث تقنيات الـ CAD/CAM في دمشق.">Blending decades of expertise since 1972 with state-of-the-art CAD/CAM workflows in Damascus.</p>
+            <a href="#gallery" class="btn-primary" data-en="View Aesthetic Cases" data-ar="عرض الحالات التجميلية">View Aesthetic Cases</a>
+        </div>
+    </section>
+
+    <!-- About Lab Section -->
+    <section id="about" class="about-section">
+        <div class="container about-container">
+            <div class="about-image">
+                <img src="images/lab-interior.jpg" alt="TED Dental Lab Interior">
+            </div>
+            <div class="about-text">
+                <h2 class="section-title" data-en="Established in 1972" data-ar="تأسس المختبر عام 1972">Established in 1972</h2>
+                <p data-en="TED Dental Lab was established in 1972 and was one of the first specialized dental prosthetic laboratories in Damascus. We combine our rich history and long-standing expertise with modern digital technologies to deliver unmatched quality and precision for dental professionals." data-ar="تأسس مخبر تيد للتعويضات السنية عام 1972، وكان من أوائل المختبرات المتخصصة بتركيبات الأسنان في دمشق. نجمع عراقتنا وخبرتنا الطويلة مع أحدث التقنيات الرقمية لنقدم أعلى معايير الدقة والجودة للسادة الأطباء.">TED Dental Lab was established in 1972 and was one of the first specialized dental prosthetic laboratories in Damascus. We combine our rich history and long-standing expertise with modern digital technologies to deliver unmatched quality and precision for dental professionals.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aesthetic Cases Slider Section -->
+    <section id="gallery" class="slider-section">
+        <div class="container">
+            <h2 class="section-title" data-en="Aesthetic Cases Gallery" data-ar="معرض الحالات التجميلية">Aesthetic Cases Gallery</h2>
+            <p class="section-subtitle" data-en="Exclusively showcasing high-end cosmetic cases and anterior perfection" data-ar="عرض حصري لأرقى الحالات التجميلية وإتقان الأسنان الأمامية">Exclusively showcasing high-end cosmetic cases and anterior perfection</p>
+            
+            <div class="slider-container">
+                <div class="slider">
+                    <!-- Slide 1 -->
+                    <div class="slide active">
+                        <img src="images/case1.jpg" alt="Aesthetic Zirconia Crown">
+                        <div class="slide-caption">Anterior Aesthetics – Esthetic Zirconia Crown</div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="slide">
+                        <img src="images/case2.jpg" alt="Emax Veneer">
+                        <div class="slide-caption">Smile Design & Emax Veneers</div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="slide">
+                        <img src="images/case3.jpg" alt="Bleach 3 Veneer Design">
+                        <div class="slide-caption">Bleach 3 Veneers & Natural Proportions</div>
+                    </div>
+                </div>
+                <!-- Controls -->
+                <button class="slider-btn prev-btn" onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn next-btn" onclick="moveSlide(1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Scanner Section -->
+    <section id="scanner" class="scanner-section">
+        <div class="container scanner-container">
+            <div class="scanner-text">
+                <h2 class="section-title" data-en="Advanced Intraoral Scanner" data-ar="أحدث أجهزة السكنر الفموي">Advanced Intraoral Scanner</h2>
+                <p data-en="Available now for doctors to experience advanced digital scanning technology directly in your clinics. Elevate your workflow with precise digital impressions." data-ar="متوفر للسادة الأطباء لتجربة تقنية السكنر الفموي المتطورة في عياداتكم للارتقاء بدقة المقاسات الرقمية.">Available now for doctors to experience advanced digital scanning technology directly in your clinics. Elevate your workflow with precise digital impressions.</p>
+            </div>
+            <div class="scanner-image">
+                <img src="images/scanner.jpg" alt="Intraoral Scanner Technology">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section (Strictly English as requested) -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Our Professional Services</h2>
+            <p class="section-subtitle" style="text-align: center; margin-bottom: 30px; font-size: 14px; color: #555;">(All professional service lists are displayed in English)</p>
+            
+            <div class="services-grid">
+                
+                <!-- Fixed Prosthodontics -->
+                <div class="service-category">
+                    <h3>Fixed Prosthodontics</h3>
+                    
+                    <h4>Crowns & Veneers</h4>
+                    <ul>
+                        <li>Emax Veneer</li>
+                        <li>Emax Crown</li>
+                        <li>Esthetic Zirconia Crown</li>
+                        <li>Dental Direkt Zirconia Crown (German)</li>
+                        <li>Esthetic Dental Direkt Zirconia Crown</li>
+                        <li>4D Zirconia Crown</li>
+                        <li>Conventional Zirconia Crown</li>
+                        <li>Full Anatomy Zirconia Crown</li>
+                        <li>Porcelain Fused to Metal (PFM Crown)</li>
+                    </ul>
+
+                    <h4>Fixed Prosthetic Planning</h4>
+                    <ul>
+                        <li>Smile Design</li>
+                        <li>Gingival Cutting Guide</li>
+                    </ul>
+
+                    <h4>Inlays & Onlays</h4>
+                    <ul>
+                        <li>Inlay</li>
+                        <li>Onlay</li>
+                    </ul>
+
+                    <h4>Bridges</h4>
+                    <ul>
+                        <li>Porcelain Adhesive Bridge (Maryland Bridge)</li>
+                        <li>Zirconia Adhesive Bridge (Maryland Bridge)</li>
+                    </ul>
+
+                    <h4>Implant Prosthetics</h4>
+                    <ul>
+                        <li>Custom Abutment (Titanium)</li>
+                        <li>Metal Post and Core</li>
+                        <li>Zirconia Post and Core</li>
+                        <li>Zirconia Post</li>
+                        <li>Glass Fiber Post</li>
+                    </ul>
+
+                    <h4>Metal Frameworks</h4>
+                    <ul>
+                        <li>Co-Cr Framework (Laser) with Gingiva Porcelain</li>
+                        <li>I-Bar (Co-Cr / Titanium)</li>
+                        <li>I-Bridge (Co-Cr / Titanium)</li>
+                    </ul>
+                </div>
+
+                <!-- Removable Prosthodontics -->
+                <div class="service-category">
+                    <h3>Removable Prosthodontics</h3>
+                    <h4>Partial & Complete Dentures</h4>
+                    <ul>
+                        <li>Co-Cr Partial Denture</li>
+                        <li>Vitallium Appliance (Co-Cr Partial Framework)</li>
+                        <li>Flexible Partial Denture</li>
+                    </ul>
+                </div>
+
+                <!-- Orthodontic & Functional Appliances -->
+                <div class="service-category">
+                    <h3>Orthodontic & Functional Appliances</h3>
+                    <ul>
+                        <li>Clear Aligner</li>
+                        <li>Orthodontic Retainer</li>
+                        <li>Night Guard (Bruxism Splint)</li>
+                        <li>Whitening Tray</li>
+                        <li>Space Maintainer</li>
+                        <li>Lingual Arch Space Maintainer</li>
+                    </ul>
+                </div>
+
+                <!-- Other Digital Services -->
+                <div class="service-category">
+                    <h3>Other Digital Services</h3>
+                    <ul>
+                        <li>Intraoral Scanner Image</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" data-en="Contact Us & STL Files" data-ar="اتصل بنا واستلام ملفات STL">Contact Us & STL Files</h2>
+            <p data-en="Damascus, Syria" data-ar="دمشق، سوريا">Damascus, Syria</p>
+            <div class="contact-info">
+                <p><i class="fas fa-phone-alt"></i> 00963944578753</p>
+                <p><i class="fab fa-telegram"></i> <span data-en="Telegram Available for STL Files" data-ar="تيليغرام متاح لإرسال ملفات STL">Telegram Available for STL Files</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 1972 - 2026 TED Dental Lab. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
