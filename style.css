@@ -31,7 +31,7 @@ body {
     padding: 0 20px;
 }
 
-/* Navbar with Larger Right-Aligned Logo */
+/* Navbar */
 .navbar {
     background-color: var(--navy);
     color: var(--white);
@@ -302,8 +302,8 @@ body {
     font-size: 1.02rem;
 }
 
-/* Gallery Slider Section */
-.gallery-section {
+/* Dedicated Clinical Cases Gallery Section */
+.cases-gallery-section {
     padding: 75px 0;
     background-color: #f4f7ff;
 }
@@ -320,7 +320,12 @@ body {
     margin-bottom: 10px;
 }
 
-.slider-wrapper {
+.section-header p {
+    color: var(--medium-blue);
+    font-size: 1.02rem;
+}
+
+.cases-slider-wrapper {
     position: relative;
     display: flex;
     align-items: center;
@@ -328,7 +333,7 @@ body {
     margin: 0 auto;
 }
 
-.slider-viewport {
+.cases-slider-viewport {
     overflow: hidden;
     width: 100%;
     border-radius: 16px;
@@ -336,25 +341,25 @@ body {
     background: var(--navy);
 }
 
-.slider-track {
+.cases-slider-track {
     display: flex;
     transition: transform 0.45s ease-in-out;
 }
 
-.slide-item {
+.case-slide-item {
     min-width: 100%;
     position: relative;
     cursor: pointer;
 }
 
-.slide-item img {
+.case-slide-item img {
     width: 100%;
     height: 480px;
     object-fit: cover;
     display: block;
 }
 
-.slider-btn {
+.cases-slider-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -373,34 +378,34 @@ body {
     transition: background-color 0.3s;
 }
 
-.slider-btn:hover {
+.cases-slider-btn:hover {
     background-color: var(--medium-blue);
 }
 
-.prev-btn {
+.cases-prev-btn {
     right: 12px;
 }
 
-.next-btn {
+.cases-next-btn {
     left: 12px;
 }
 
-html[dir="ltr"] .prev-btn {
+html[dir="ltr"] .cases-prev-btn {
     right: auto;
     left: 12px;
 }
 
-html[dir="ltr"] .next-btn {
+html[dir="ltr"] .cases-next-btn {
     left: auto;
     right: 12px;
 }
 
-html[dir="ltr"] .prev-btn i,
-html[dir="ltr"] .next-btn i {
+html[dir="ltr"] .cases-prev-btn i,
+html[dir="ltr"] .cases-next-btn i {
     transform: rotate(180deg);
 }
 
-.slider-dots {
+.cases-slider-dots {
     display: flex;
     justify-content: center;
     gap: 8px;
@@ -608,7 +613,7 @@ html[dir="ltr"] .next-btn i {
     .nav-links.active {
         display: flex;
     }
-    .slide-item img {
+    .case-slide-item img {
         height: 300px;
     }
 }
@@ -620,7 +625,7 @@ html[dir="ltr"] .next-btn i {
     .btn {
         width: 100%;
     }
-    .slide-item img {
+    .case-slide-item img {
         height: 240px;
     }
     .services-grid {

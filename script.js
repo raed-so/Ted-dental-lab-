@@ -1,5 +1,5 @@
 let currentLang = 'ar';
-let currentSlide = 0;
+let currentCaseSlide = 0;
 
 function toggleLanguage() {
     currentLang = currentLang === 'ar' ? 'en' : 'ar';
@@ -15,7 +15,7 @@ function toggleLanguage() {
         el.textContent = el.getAttribute(`data-${currentLang}`);
     });
 
-    updateSliderPosition();
+    updateCaseSliderPosition();
 }
 
 function toggleMenu() {
@@ -28,10 +28,10 @@ function closeMenu() {
     navLinks.classList.remove('active');
 }
 
-// إعداد معرض الصور (Slider)
-function initSlider() {
-    const slides = document.querySelectorAll('.slide-item');
-    const dotsContainer = document.getElementById('slider-dots');
+// إعداد معرض الحالات السريرية المستقل (Slider)
+function initCaseSlider() {
+    const slides = document.querySelectorAll('.case-slide-item');
+    const dotsContainer = document.getElementById('cases-slider-dots');
     if (!dotsContainer) return;
     dotsContainer.innerHTML = '';
 
@@ -39,34 +39,34 @@ function initSlider() {
         const dot = document.createElement('span');
         dot.classList.add('dot');
         if (idx === 0) dot.classList.add('active');
-        dot.onclick = () => goToSlide(idx);
+        dot.onclick = () => goToCaseSlide(idx);
         dotsContainer.appendChild(dot);
     });
 }
 
-function updateSliderPosition() {
-    const track = document.getElementById('slider-track');
-    const dots = document.querySelectorAll('.dot');
+function updateCaseSliderPosition() {
+    const track = document.getElementById('cases-slider-track');
+    const dots = document.querySelectorAll('.cases-slider-dots .dot');
     if (!track) return;
     
     const directionFactor = currentLang === 'ar' ? 1 : -1;
-    track.style.transform = `translateX(${directionFactor * currentSlide * 100}%)`;
+    track.style.transform = `translateX(${directionFactor * currentCaseSlide * 100}%)`;
 
     dots.forEach((dot, idx) => {
-        dot.classList.toggle('active', idx === currentSlide);
+        dot.classList.toggle('active', idx === currentCaseSlide);
     });
 }
 
-function moveSlide(step) {
-    const slides = document.querySelectorAll('.slide-item');
+function moveCaseSlide(step) {
+    const slides = document.querySelectorAll('.case-slide-item');
     if (slides.length === 0) return;
-    currentSlide = (currentSlide + step + slides.length) % slides.length;
-    updateSliderPosition();
+    currentCaseSlide = (currentCaseSlide + step + slides.length) % slides.length;
+    updateCaseSliderPosition();
 }
 
-function goToSlide(index) {
-    currentSlide = index;
-    updateSliderPosition();
+function goToCaseSlide(index) {
+    currentCaseSlide = index;
+    updateCaseSliderPosition();
 }
 
 // تكبير الصور عند النقر (Lightbox)
@@ -86,5 +86,5 @@ function closeLightbox() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    initSlider();
+    initCaseSlider();
 });
