@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TED Dental Lab | مخبر تيد للتعويضات السنية</title>
-    <!-- خط Alexandria -->
+    <!-- استدعاء خط Alexandria -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
@@ -14,26 +14,29 @@
 </head>
 <body>
 
-    <!-- الشريط العلوي مع اللوغو العريض -->
+    <!-- الشريط العلوي مع الشعار بالمنتصف بكامل الحجم -->
     <header class="navbar">
-        <div class="container nav-content">
-            <div class="logo-area-full">
-                <img src="images/logo.png" alt="TED Dental Lab Logo" class="brand-logo-img">
+        <div class="container nav-content-centered">
+            <div class="logo-center-area">
+                <img src="images/logo.png" alt="TED Dental Lab Logo" class="brand-logo-center">
             </div>
 
-            <nav class="nav-links" id="nav-links">
-                <a href="#about" onclick="closeMenu()" data-ar="من نحن" data-en="About Us">من نحن</a>
-                <a href="#scanner" onclick="closeMenu()" data-ar="السكنر الفموي" data-en="Intraoral Scanner">السكنر الفموي</a>
-                <a href="#gallery" onclick="closeMenu()" data-ar="معرض الأعمال" data-en="Gallery">معرض الأعمال</a>
-                <a href="#services" onclick="closeMenu()" data-ar="خدماتنا" data-en="Services">خدماتنا</a>
-                <a href="#contact" onclick="closeMenu()" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
-            </nav>
+            <div class="nav-top-row">
+                <nav class="nav-links" id="nav-links">
+                    <a href="#about" onclick="closeMenu()" data-ar="من نحن" data-en="About Us">من نحن</a>
+                    <a href="#scanner" onclick="closeMenu()" data-ar="السكنر الفموي" data-en="Intraoral Scanner">السكنر الفموي</a>
+                    <a href="#online-design" onclick="closeMenu()" data-ar="التصميم الأونلاين" data-en="Online Design">التصميم الأونلاين</a>
+                    <a href="#gallery" onclick="closeMenu()" data-ar="معرض الأعمال" data-en="Gallery">معرض الأعمال</a>
+                    <a href="#services" onclick="closeMenu()" data-ar="خدماتنا" data-en="Services">خدماتنا</a>
+                    <a href="#contact" onclick="closeMenu()" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
+                </nav>
 
-            <div class="nav-actions">
-                <button id="lang-toggle" class="lang-btn" onclick="toggleLanguage()">English</button>
-                <button class="menu-toggle" id="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
+                <div class="nav-actions">
+                    <button id="lang-toggle" class="lang-btn" onclick="toggleLanguage()">English</button>
+                    <button class="menu-toggle" id="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
@@ -85,12 +88,32 @@
         </div>
     </section>
 
-    <!-- معرض الصور والحالات (السلايدر) -->
+    <!-- قسم التصميم الأونلاين (استقبال الملفات من دول أخرى) -->
+    <section id="online-design" class="online-design-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-ar="خدمة التصميم الرقمي الأونلاين الدولية" data-en="International Online Dental Design Service">خدمة التصميم الرقمي الأونلاين الدولية</h2>
+                <p data-ar="نستقبل ملفات الـ STL والـ PLY من أطباء الأسنان والمخابر حول العالم لتصميم الحالات بدقة واحترافية عالية" data-en="Accepting STL and PLY scan files from dentists and labs worldwide for precise digital design">نستقبل ملفات الـ STL والـ PLY من أطباء الأسنان والمخابر حول العالم لتصميم الحالات بدقة واحترافية عالية</p>
+            </div>
+            <div class="online-content">
+                <div class="online-card">
+                    <i class="fa-solid fa-globe"></i>
+                    <h3 data-ar="تصميم معتمد لجميع دول العالم" data-en="Global CAD/CAM Solutions">تصميم معتمد لجميع دول العالم</h3>
+                    <p data-ar="أرسل مقاساتك الرقمية (Intraoral Scans) عبر قنواتنا الرقمية واحصل على تصاميم CAD جاهزة للتصنيع بأعلى معايير الجودة." data-en="Send your digital impressions via our digital channels and receive production-ready CAD designs matching the highest quality standards.">أرسل مقاساتك الرقمية (Intraoral Scans) عبر قنواتنا الرقمية واحصل على تصاميم CAD جاهزة للتصنيع بأعلى معايير الجودة.</p>
+                    <a href="https://t.me/+963944578753" target="_blank" class="btn btn-primary">
+                        <i class="fa-brands fa-telegram"></i>
+                        <span data-ar="تواصل لإرسال الملفات دولياً" data-en="Contact to Send Files Internationally">تواصل لإرسال الملفات دولياً</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- معرض الصور (بدون شرح، فقط صور الـ case) -->
     <section id="gallery" class="gallery-section">
         <div class="container">
             <div class="section-header">
-                <h2 data-ar="معرض الحالات التجميلية وأقسام المخبر" data-en="Aesthetic Cases & Laboratory Gallery">معرض الحالات التجميلية وأقسام المخبر</h2>
-                <p data-ar="لقطات حقيقية من أعمالنا السريرية وتجهيزاتنا الرقمية في مخبر تيد" data-en="Authentic clinical cases and digital workflows inside TED Dental Lab">لقطات حقيقية من أعمالنا السريرية وتجهيزاتنا الرقمية في مخبر تيد</p>
+                <h2 data-ar="معرض الحالات والتصاميم" data-en="Cases & Designs Gallery">معرض الحالات والتصاميم</h2>
             </div>
 
             <div class="slider-wrapper">
@@ -99,32 +122,16 @@
                 <div class="slider-viewport">
                     <div class="slider-track" id="slider-track">
                         <div class="slide-item" onclick="openLightbox('images/case1.jpg')">
-                            <img src="images/case1.jpg" alt="Anterior Veneers Case" onerror="this.src='images/heritage.jpg'">
-                            <div class="slide-caption">
-                                <span class="caption-title" data-ar="ابتسامة هوليود - عدسات Emax" data-en="Hollywood Smile - Emax Veneers">ابتسامة هوليود - عدسات Emax</span>
-                                <span class="caption-sig">Raed Somaya</span>
-                            </div>
+                            <img src="images/case1.jpg" alt="Case 1" onerror="this.src='images/heritage.jpg'">
                         </div>
                         <div class="slide-item" onclick="openLightbox('images/case2.jpg')">
-                            <img src="images/case2.jpg" alt="CAD/CAM Zirconia Design" onerror="this.src='images/scanner.jpg'">
-                            <div class="slide-caption">
-                                <span class="caption-title" data-ar="قسم CAD/CAM والتصميم الرقمي" data-en="CAD/CAM & Digital Smile Design">قسم CAD/CAM والتصميم الرقمي</span>
-                                <span class="caption-sig">Raed Somaya</span>
-                            </div>
+                            <img src="images/case2.jpg" alt="Case 2" onerror="this.src='images/scanner.jpg'">
                         </div>
                         <div class="slide-item" onclick="openLightbox('images/case3.jpg')">
-                            <img src="images/case3.jpg" alt="Esthetic Zirconia Crown" onerror="this.src='images/heritage.jpg'">
-                            <div class="slide-caption">
-                                <span class="caption-title" data-ar="تيجان الزيركون التجميلي متعدد الطبقات" data-en="Multilayer Esthetic Zirconia Crowns">تيجان الزيركون التجميلي متعدد الطبقات</span>
-                                <span class="caption-sig">Raed Somaya</span>
-                            </div>
+                            <img src="images/case3.jpg" alt="Case 3" onerror="this.src='images/heritage.jpg'">
                         </div>
                         <div class="slide-item" onclick="openLightbox('images/case4.jpg')">
-                            <img src="images/case4.jpg" alt="Implant Prosthetics" onerror="this.src='images/scanner.jpg'">
-                            <div class="slide-caption">
-                                <span class="caption-title" data-ar="تعويضات الزرعات والدعامات المخصصة" data-en="Custom Implant Abutments & Frameworks">تعويضات الزرعات والدعامات المخصصة</span>
-                                <span class="caption-sig">Raed Somaya</span>
-                            </div>
+                            <img src="images/case4.jpg" alt="Case 4" onerror="this.src='images/scanner.jpg'">
                         </div>
                     </div>
                 </div>
@@ -141,7 +148,7 @@
         <img class="lightbox-content" id="lightbox-img" alt="Enlarged Case">
     </div>
 
-    <!-- قسم الخدمات الفنية (قوائم الأعمال بالإنجليزية حصرياً) -->
+    <!-- قسم الخدمات الفنية (باللغة الإنجليزية حصرياً) -->
     <section id="services" class="services-section" dir="ltr">
         <div class="container">
             <div class="section-header">
@@ -234,13 +241,12 @@
         </div>
     </section>
 
-    <!-- قسم التواصل (مع الايميل وروابط الفيس والانستا الحقيقية) -->
+    <!-- قسم التواصل (مع الإيميل والروابط الحقيقية وبدون توقيع) -->
     <footer id="contact" class="footer">
         <div class="container footer-grid">
             <div class="footer-about">
                 <h3>TED Dental Lab</h3>
                 <p data-ar="مخبر تيد للتعويضات السنية - دمشق، سوريا. تأسس عام 1972." data-en="TED Dental Lab - Damascus, Syria. Established in 1972.">مخبر تيد للتعويضات السنية - دمشق، سوريا. تأسس عام 1972.</p>
-                <p class="signature">Raed Somaya</p>
             </div>
 
             <div class="footer-contact">

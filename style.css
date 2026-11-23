@@ -31,47 +31,57 @@ body {
     padding: 0 20px;
 }
 
-/* Navbar with Full-Width Logo Area */
+/* Navbar with Centered Full-Size Logo */
 .navbar {
     background-color: var(--navy);
     color: var(--white);
-    padding: 12px 0;
+    padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
 }
 
-.nav-content {
+.nav-content-centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-center-area {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.brand-logo-center {
+    height: 75px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+.nav-top-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-}
-
-.logo-area-full {
-    display: flex;
-    align-items: center;
-}
-
-.brand-logo-img {
-    height: 48px;
-    width: auto;
-    max-width: 220px;
-    object-fit: contain;
-    border-radius: 4px;
+    width: 100%;
+    border-top: 1px solid rgba(216, 227, 255, 0.2);
+    padding-top: 10px;
 }
 
 .nav-links {
     display: flex;
-    gap: 22px;
+    gap: 20px;
 }
 
 .nav-links a {
     color: var(--white);
     text-decoration: none;
     font-weight: 400;
-    font-size: 0.95rem;
+    font-size: 0.93rem;
     transition: color 0.3s;
 }
 
@@ -264,7 +274,45 @@ body {
     background-color: var(--medium-blue);
 }
 
-/* Gallery Slider Section */
+/* Online Design Section */
+.online-design-section {
+    padding: 70px 0;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.online-content {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.online-card {
+    background-color: #f8faff;
+    border: 1px solid var(--light-blue-white);
+    border-radius: 14px;
+    padding: 40px 30px;
+    box-shadow: 0 8px 25px rgba(21, 51, 119, 0.08);
+}
+
+.online-card i {
+    font-size: 3rem;
+    color: var(--medium-blue);
+    margin-bottom: 20px;
+}
+
+.online-card h3 {
+    color: var(--navy);
+    font-size: 1.4rem;
+    margin-bottom: 14px;
+}
+
+.online-card p {
+    color: #4a5568;
+    margin-bottom: 25px;
+    font-size: 1.02rem;
+}
+
+/* Gallery Slider Section (Clean Images Only) */
 .gallery-section {
     padding: 75px 0;
     background-color: #f4f7ff;
@@ -316,37 +364,9 @@ body {
 
 .slide-item img {
     width: 100%;
-    height: 460px;
+    height: 480px;
     object-fit: cover;
     display: block;
-}
-
-.slide-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(21, 51, 119, 0.92), transparent);
-    color: var(--white);
-    padding: 35px 24px 18px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.caption-title {
-    font-weight: 600;
-    font-size: 1.05rem;
-}
-
-.caption-sig {
-    font-family: cursive, 'Alexandria', sans-serif;
-    font-weight: 300;
-    font-size: 0.95rem;
-    color: var(--light-blue-white);
-    letter-spacing: 0.8px;
 }
 
 .slider-btn {
@@ -539,14 +559,6 @@ html[dir="ltr"] .next-btn i {
     color: #e2e8f0;
 }
 
-.signature {
-    font-family: cursive, 'Alexandria', sans-serif;
-    color: var(--light-blue-white);
-    margin-top: 15px;
-    font-weight: 300;
-    letter-spacing: 1px;
-}
-
 .social-icons {
     display: flex;
     gap: 14px;
@@ -595,6 +607,9 @@ html[dir="ltr"] .next-btn i {
         align-items: center;
         justify-content: center;
     }
+    .nav-top-row {
+        position: relative;
+    }
     .nav-links {
         display: none;
         flex-direction: column;
@@ -616,4 +631,17 @@ html[dir="ltr"] .next-btn i {
     }
 }
 
-@media (max-width:
+@media (max-width: 480px) {
+    .brand-logo-center {
+        height: 55px;
+    }
+    .btn {
+        width: 100%;
+    }
+    .slide-item img {
+        height: 240px;
+    }
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
