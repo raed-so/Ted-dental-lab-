@@ -458,11 +458,11 @@ html[dir="ltr"] .cases-next-btn i {
     cursor: pointer;
 }
 
-/* Services Section (Strictly English LTR) */
+/* Services Section (Adaptive RTL/LTR) */
 .services-section {
     padding: 75px 0;
     background-color: var(--white);
-    text-align: left;
+    /* تم إزالة text-align: left الثابتة لتعتمد على اتجاه الصفحة العام RTL أو LTR */
 }
 
 .services-grid {
@@ -505,7 +505,8 @@ html[dir="ltr"] .cases-next-btn i {
 
 .service-card ul {
     list-style: none;
-    padding-left: 5px;
+    /* استخدام الحشو المتوافق مع الاتجاه تلقائياً */
+    padding-inline-start: 5px;
 }
 
 .service-card ul li {
@@ -513,7 +514,8 @@ html[dir="ltr"] .cases-next-btn i {
     font-size: 0.93rem;
     color: #2d3748;
     position: relative;
-    padding-left: 18px;
+    /* ضبط المسافة للنص حسب اتجاه اللغة */
+    padding-inline-start: 18px;
 }
 
 .service-card ul li::before {
@@ -521,7 +523,8 @@ html[dir="ltr"] .cases-next-btn i {
     color: var(--medium-blue);
     font-weight: bold;
     position: absolute;
-    left: 0;
+    /* جعل النقطة تظهر على اليمين في العربية وعلى اليسار في الإنجليزية تلقائياً */
+    inset-inline-start: 0;
 }
 
 /* Footer */
